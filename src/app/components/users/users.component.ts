@@ -18,11 +18,17 @@ export class UsersComponent {
 
 
   getUsers(){
-    this.users=JSON.parse(localStorage.getItem('user') as any);
+    this.users=JSON.parse(localStorage.getItem('users') as any);
   }
 
-  navigateTo(index:number){
-       this.router.navigate(['create-account',index]);
+  deleteUser(index:number){
+    this.users.splice(index,1);
+    localStorage.setItem('users',JSON.stringify(this.users));
+    this.getUsers();
+  }
+
+  navigateTo(userId:number){
+       this.router.navigate(['create-account',userId]);
   }
 
 }

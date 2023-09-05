@@ -16,8 +16,8 @@
                 <td>{{item.email}}</td>
                 <td>{{item.mobileNumber}}</td>
                 <td>
-                    <button type="button" class="btn btn-danger">Delete</button>
-                    <button type="button" class="btn btn-success mx-2" (click)="navigateTo(index)">Update</button>
+                    <button type="button" class="btn btn-danger" (click)="deleteUser(index)">Delete</button>
+                    <button type="button" class="btn btn-success mx-2" (click)="navigateTo(item.id)">Update</button>
                 </td>
             </tr>
         </tbody>
